@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="head"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+                <ul>
+                    <li><a href="./index.html">Calculator</a></li>
+                    <li><a href="./transaction.html">Transaction list</a></li>
+                </ul>
+            </div>
+            <div><i class="fa-solid fa-user"></i></div>
+        </nav>
+    </header>
+    <div class="transactioncontainer">
+        <div class="root1">
+            <div id="items">
+                <h2>Sources</h2>
+                <table id="table">
+                    <thead>
+                        <tr class="titles">
+                            <th>S.no.</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <div class="custom-div">
+            <h1>CHAT</h1>
+            <div class="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let chart = () => {
+            let val = [];
+            let labels = new Array();
+            let value = localStorage.getItem('expense')
+            let out = JSON.parse(value)
+            out.forEach((e) => val.push(parseInt(e.amount)))
+            out.map(a => labels.push(a.name));
+            
+            const ctx = document.getElementById('myChart');
+            new Chart(ctx,{
+                type: 'doughnut',
+                data: {
+                    labels:labels,
+                    datasets: [{
+                        label: ['expense'],
+                        data: val, 
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+        chart();
+    </script>
+     <script src="https://kit.fontawesome.com/f697130477.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

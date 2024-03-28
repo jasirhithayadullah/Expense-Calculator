@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="head"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+                <ul>
+                    <li><a href="#">Calculator</a></li>
+                    <li><a href="./transaction.html">Transaction list</a></li>
+                </ul>
+            </div>
+            <div><i class="fa-solid fa-user"></i></div>
+        </nav>
+    </header>
+    <section>
+        <div class="row">
+            <div class="summary">
+                <div>
+                    <h1>
+                        Balance:
+                        <span id="updatedBal">0</span>
+                    </h1>
+                </div>
+                <div class="total">
+                    <div>
+                        Total Income:
+                        <h2 style="color: green" id="updatedInc">0</h2>
+                    </div>
+                    <div>
+                        Total Expenses:
+                        <h2 style="color: red" id="updatedExp">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="new" class="addvalues">
+                <h2>Add new</h2>
+                <div class="inputs">
+                    <div class="inputitem">
+                        <p style="width: 9rem">Entry type:</p>
+                        <select id="itemType">
+                            <option value="0">Expense</option>
+                            <option value="1">Income</option>
+                        </select>
+                    </div>
+                    <div class="inputitem">
+                        <p style="width: 9rem">Name:</p>
+                        <input id="name" type="text" value="" placeholder="name" />
+                    </div>
+                    <div class="inputitem">
+                        <p style="width: 9rem">Amount:</p>
+
+                        <input value="" id="amount" name="mod" type="number" placeholder="amount" />
+                    </div>
+                </div>
+                <div class="btn ">
+                    <button onclick="addItem()">Add Expense</button>
+                </div>
+            </div>
+        </div>
+        <div class="root">
+            <div id="items">
+                <h2>Expenses</h2>
+                <table id="table">
+                    <tr class="titles">
+                        <th>S.no.</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f697130477.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
