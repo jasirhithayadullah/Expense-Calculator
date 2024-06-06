@@ -1,2 +1,1 @@
-# payslip
-payslip project is worked in javascript
+Expense Calculator
